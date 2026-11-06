@@ -1,0 +1,3 @@
+- pras duas versões: prompt, modelo e revisão, parâmetros, fonte/contexto, data
+- Em B, a única mudança declarada (um fator só) e a justificativa dela
+- Confirmar que modelo e casos são idênticos nas duas versões

@@ -1,0 +1,3 @@
+- Doze casos nomeados por caso e versão (ex.: CT01-A), cada um com a saída bruta (imagem), versão, configuração e fonte/contexto efetivamente usados
+- Erros e saídas vazias registrados como tais, sem edição
+- Avaliacao automatica criada em GQM: F1 por saída, com τ aplicado e a indicação de sinal automático (aprova ou não)

@@ -1,0 +1,3 @@
+- (pessoa 5): doze anotações com as notas 0/1/2 de correção, relevância e suporte, falha crítica (0/1), justificativa breve de cada nota e registro das limitações do cegamento
+- (pessoa 6): quatro anotações (CT01 e CT05 nas versões A e B), feitas sem consultar a R1
+- consenso: só para as divergências, com a justificativa do acordo. As notas originais de R1 e R2 não são apagadas.

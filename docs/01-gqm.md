@@ -1,0 +1,6 @@
+- Objetivo, Q1 e Q2
+- As três medidas (F1 lexical, taxa de aprovação humana, concordância auto–humano), cada uma com unidade, fórmula/denominador e limitação
+- Valor de τ com justificativa, e a regra “automático aprova se F1 ≥ τ”
+- Regra de normalização e política para referência vazia
+- Critério de avanço e condição de bloqueio por falha crítica
+- Data e commit do registro, para comprovar que foi feito antes da execução final

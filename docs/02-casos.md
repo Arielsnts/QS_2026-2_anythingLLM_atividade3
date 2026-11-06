@@ -1,0 +1,4 @@
+- Tabela com os seis casos: ID, tipo, pergunta, fonte e trecho de apoio, resposta de referência revisada, nome do revisor
+- Para o CT05, a abstenção esperada descrita explicitamente
+- Para o CT06, o caso de origem (CT01 a CT04) e a alteração feita (paráfrase ou erro de digitação)
+- Os documentos usados no workspace, com versão
