@@ -1,0 +1,50 @@
+Relatório Financeiro 2025
+Empresa Exemplo S.A. | Dados fictícios para testes | Exercício encerrado em 31/12/2025
+1. Resumo executivo
+Em 2025, a Empresa Exemplo S.A. registrou receita líquida de R$ 48,6 milhões, crescimento de
+18,0% em relação a 2024 (R$ 41,2 milhões). O lucro líquido foi de R$ 5,8 milhões, com margem
+líquida de 11,9%. Todos os valores são fictícios e foram criados para fins de teste.
+2. Demonstração de resultado 2025
+ItemValor (R$ milhões)
+Receita bruta52,4
+(-) Deduções e impostos sobre vendas3,8
+Receita líquida48,6
+(-) Custo dos serviços prestados28,3
+Lucro bruto20,3
+(-) Despesas comerciais5,9
+(-) Despesas administrativas4,7
+(-) Pesquisa e desenvolvimento1,9
+Lucro operacional (EBIT)7,8
+(-) Resultado financeiro líquido0,6
+Lucro antes do imposto de renda7,2
+(-) Imposto de renda e contribuição social1,4
+Lucro líquido5,8
+3. Principais indicadores
+Indicador20242025
+Receita líquidaR$ 41,2 milhõesR$ 48,6 milhões
+Lucro líquidoR$ 4,3 milhõesR$ 5,8 milhões
+Margem bruta39,5%41,8%
+Margem líquida10,4%11,9%
+EBITDAR$ 7,1 milhõesR$ 9,0 milhões
+Margem EBITDA17,2%18,5%
+Número de colaboradores (31/12)276312
+Relatório Financeiro 2025 - Empresa Exemplo S.A.
+Página 1Indicador20242025
+Clientes ativos (31/12)2.6503.150
+4. Receita líquida por trimestre (2025)
+TrimestreReceita líquida (R$ milhões)
+1º trimestre10,9
+2º trimestre11,8
+3º trimestre12,4
+4º trimestre13,5
+Total do ano48,6
+5. Custos e despesas
+O total de custos e despesas operacionais em 2025 foi de R$ 40,8 milhões, sendo R$ 28,3 milhões
+de custo dos serviços prestados e R$ 12,5 milhões de despesas operacionais. A depreciação e
+amortização somaram R$ 1,2 milhão no período.
+6. Comparação com as metas
+A receita líquida de 2025 superou a meta de R$ 45 milhões. A margem líquida de 11,9% ficou
+ligeiramente abaixo da meta de 12%. O número de colaboradores ao final do ano (312) ficou abaixo
+da meta de 320, e o de clientes ativos (3.150) ficou abaixo da meta de 3.200.
+Relatório Financeiro 2025 - Empresa Exemplo S.A.
+Página 2
