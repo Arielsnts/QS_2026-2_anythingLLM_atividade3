@@ -1,6 +1,7 @@
 import re
 import unicodedata
 from collections import Counter
+import sys
 
 def tokenizar(texto):
     texto = unicodedata.normalize("NFC", texto).casefold()
@@ -22,8 +23,8 @@ def f1_lexical(resposta, referencia):
     f1 = 2 * p * r / (p + r)
     return f1, len(tok_resp), len(tok_ref), comuns
 
-resposta = open("saida.txt", encoding="utf-8").read()
-referencia = open("referencia.txt", encoding="utf-8").read()
+resposta = open(sys.argv[1], encoding="utf-8").read()
+referencia = open(sys.argv[2], encoding="utf-8").read()
 
 f1, n_resp, n_ref, comuns = f1_lexical(resposta, referencia)
 print(f"tokens_resposta={n_resp}, tokens_referencia={n_ref}, comuns={comuns}, F1={f1:.3f}")
