@@ -5,14 +5,14 @@ Este documento apresenta a avaliação da qualidade de geração aumentada por r
 A avaliação utiliza três métricas principais, pontuadas de 0 a 2: Correção (C), Relevância (R) e Suporte (S), além da identificação de Falhas Críticas (como alucinações ou fabricação de dados).
 
 ## Avaliação (R1)
-| ID | C (0/1/2) | R (0/1/2) | S (0/1/2) | Falha crítica (0/1) | Justificativa |
-|---|:---:|:---:|:---:|:---:|---|
+| Caso | C | R  | S | Falha crítica | Justificativa |
+| ------ |:---:|:---:|:---:|:--------:|---|
 | CT01-A | 2 | 2 | 2 | 0 | A resposta informa corretamente o valor de R$ 50,00 por dia útil. |
 | CT01-B | 2 | 2 | 2 | 0 | Valor correto, adicionando o detalhe do cartão benefício e a citação explícita da fonte. |
 | CT02-A | 2 | 2 | 2 | 0 | A missão da empresa foi recuperada e transcrita corretamente. |
 | CT02-B | 2 | 2 | 2 | 0 | Missão apresentada de forma direta, cumprindo a restrição de formato e citando a fonte. |
-| CT03-A | 0 | 2 | 0 | 1 | **Falha Crítica:** A IA forneceu um valor financeiro (R$ 48,6 milhões) configurando alucinação ou uso de conhecimento externo não suportado pelas fontes. |
-| CT03-B | 2 | 2 | 2 | 0 | Abstenção justificada; a IA declarou explicitamente a limitação conforme instruído no prompt. |
+| CT03-A | 2 | 2 | 2 | 0 | Resposta correta. A IA forneceu um valor correto de (R$ 48,6 milhões). |
+| CT03-B | 0 | 0 | 0 | 0 | **Falha Média:**(Falso negativo)Houve uma abstenção incorreta; O documento continha o dado da receita. |
 | CT04-A | 2 | 2 | 2 | 0 | Informou corretamente o período de experiência de 90 dias para o plano de saúde. |
 | CT04-B | 2 | 2 | 2 | 0 | Resposta objetiva com o prazo correto e citação formal da política de benefícios. |
 | CT05-A | 2 | 2 | 2 | 0 | Abstenção correta, indicando a falta de informações sobre o bônus de 2025. |
@@ -25,7 +25,7 @@ A avaliação utiliza três métricas principais, pontuadas de 0 a 2: Correção
 O segundo avaliador analisou os quatro casos selecionados (CT01-A, CT01-B, CT05-A e CT05-B), utilizando os critérios de Correção (C), Relevância (R), Suporte (S) e Falha Crítica.
 
 | Caso   |  C |  R |  S | Falha Crítica | Justificativa                                                                                                                         |
-| ------ | -: | -: | -: | ------------: | ------------------------------------------------------------------------------------------------------------------------------------- |
+| ------ | -: | -: | -: | :-----------: | ------------------------------------------------------------------------------------------------------------------------------------- |
 | CT01-A |  2 |  2 |  2 |             0 | A resposta apresenta corretamente o valor de R$ 50,00 por dia útil trabalhado, conforme a Política de Benefícios.                     |
 | CT01-B |  2 |  2 |  2 |             0 | A resposta informa corretamente o valor do benefício e o crédito mensal em cartão benefício, de acordo com o documento.               |
 | CT05-A |  2 |  2 |  2 |             0 | A resposta reconhece que não há informações sobre o valor do bônus anual de 2025 nos documentos disponíveis, evitando inventar dados. |
