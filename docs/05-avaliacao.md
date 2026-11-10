@@ -18,5 +18,44 @@ A avaliação utiliza três métricas principais, pontuadas de 0 a 2: Correção
 | CT06-A | 2 | 2 | 2 | 0 | Informou o valor correto de R$ 50,00/dia útil e detalhou regras de crédito, acúmulo e faixas de desconto em folha. |
 | CT06-B | 2 | 2 | 2 | 0 | Resposta objetiva com o valor correto de R$ 50,00/dia útil e condições de concessão, aderente aos documentos. | 
 
-- (pessoa 6): quatro anotações (CT01 e CT05 nas versões A e B), feitas sem consultar a R1
-- consenso: só para as divergências, com a justificativa do acordo. As notas originais de R1 e R2 não são apagadas.
+## Avaliação (R2)
+
+O segundo avaliador analisou os quatro casos selecionados (CT01-A, CT01-B, CT05-A e CT05-B), utilizando os critérios de Correção (C), Relevância (R), Suporte (S) e Falha Crítica.
+
+| Caso   |  C |  R |  S | Falha Crítica | Justificativa                                                                                                                         |
+| ------ | -: | -: | -: | ------------: | ------------------------------------------------------------------------------------------------------------------------------------- |
+| CT01-A |  2 |  2 |  2 |             0 | A resposta apresenta corretamente o valor de R$ 50,00 por dia útil trabalhado, conforme a Política de Benefícios.                     |
+| CT01-B |  2 |  2 |  2 |             0 | A resposta informa corretamente o valor do benefício e o crédito mensal em cartão benefício, de acordo com o documento.               |
+| CT05-A |  2 |  2 |  2 |             0 | A resposta reconhece que não há informações sobre o valor do bônus anual de 2025 nos documentos disponíveis, evitando inventar dados. |
+| CT05-B |  2 |  2 |  2 |             0 | A resposta também realiza a abstenção corretamente, sem apresentar informações não comprovadas pelos documentos.                      |
+
+## Concordância entre R1 e R2
+
+Após a avaliação do segundo avaliador, foi realizada a comparação entre as pontuações de R1 e R2 nos quatro casos selecionados.
+
+| Caso   | Avaliação R1 (C/R/S/FC) | Avaliação R2 (C/R/S/FC) | Concordância |
+| ------ | ----------------------- | ----------------------- | ------------ |
+| CT01-A | 2/2/2/0                 | 2/2/2/0                 | Sim          |
+| CT01-B | 2/2/2/0                 | 2/2/2/0                 | Sim          |
+| CT05-A | 2/2/2/0                 | 2/2/2/0                 | Sim          |
+| CT05-B | 2/2/2/0                 | 2/2/2/0                 | Sim          |
+
+**Resultado da concordância:**
+
+- Casos avaliados: 4
+- Casos com concordância: 4
+- Casos com divergência: 0
+- Taxa de concordância: **100%**
+
+A taxa foi calculada pela seguinte fórmula:
+
+`Concordância = (Casos com avaliações iguais / Total de casos) × 100`
+
+`Concordância = (4 / 4) × 100 = 100%`
+
+## Consenso entre os avaliadores
+
+A comparação entre as avaliações de R1 e R2 apresentou concordância de 100%. Todos os quatro casos analisados receberam pontuações idênticas nos critérios de Correção, Relevância, Suporte e Falha Crítica.
+
+Dessa forma, não foram identificadas divergências entre os avaliadores, não sendo necessária uma etapa adicional de consenso ou alteração das avaliações originais. As tabelas de R1 e R2 foram preservadas integralmente.
+
