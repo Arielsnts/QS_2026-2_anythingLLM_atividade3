@@ -3,6 +3,8 @@
 Este documento apresenta a avaliação da qualidade de geração aumentada por recuperação (RAG) do modelo AnythingLLM aplicado a documentos organizacionais internos (Políticas de Benefícios, Manuais e Relatórios). O objetivo é avaliar a aderência das respostas aos documentos fornecidos, contrastando o comportamento padrão da IA (Versão A) com o comportamento sob um system prompt restrito (Versão B).   
 
 A avaliação utiliza três métricas principais, pontuadas de 0 a 2: Correção (C), Relevância (R) e Suporte (S), além da identificação de Falhas Críticas (como alucinações ou fabricação de dados).
+
+## Avaliação (R1)
 | ID | C (0/1/2) | R (0/1/2) | S (0/1/2) | Falha crítica (0/1) | Justificativa |
 |---|:---:|:---:|:---:|:---:|---|
 | CT01-A | 2 | 2 | 2 | 0 | A resposta informa corretamente o valor de R$ 50,00 por dia útil. |
