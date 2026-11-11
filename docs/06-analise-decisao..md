@@ -4,58 +4,63 @@
 
 Este documento consolida as 12 saídas do experimento (6 casos × versões A e B) e apresenta a análise comparativa e a decisão, conforme o Plano GQM. A **Versão A** é o baseline (prompt direto) e a **Versão B** usa o prompt estruturado.
 
-Os valores de F1 são os do Registro das Saídas, com τ = 0,5. As notas humanas (Correção, Relevância, Suporte e Falha Crítica) são as de `05-avaliacao.md`. Conforme o GQM, a decisão se baseia na avaliação humana.
+Os valores de F1 são os do Registro das Saídas, com τ = 0,5. As notas humanas (Correção, Relevância, Suporte e Falha Crítica) são as de `05-avaliacao.md`. Conforme o GQM, a decisão considera principalmente a avaliação humana, utilizando o F1 como indicador automático complementar.
 
-> **Nota sobre o F1:** ao recalcular o F1 com as respostas esperadas do plano de casos de teste, os valores ficam diferentes dos registrados. Exemplo: o CT01-A dá 0,636 no recálculo e 0,076 no registro. Não foi possível confirmar quais arquivos de referência o script do grupo usou, então a tabela traz o valor do registro, e o recálculo aparece só na seção 4. Os valores recalculados estão no arquivo `anexos/f1_recalculado.json`.
+## Tabela consolidada
 
-## 1. Tabela consolidada
+| ID | F1 | Sinal | C/R/S/FC | Decisão final | Justificativa |
+|---|---:|---|---|---|---|
+| CT01-A | 0,636 | Aprova | 2/2/2/0 | Aprovada | Valor correto de R$ 50,00 por dia útil. |
+| CT01-B | 0,452 | Reprova | 2/2/2/0 | Aprovada | Valor correto, com cartão benefício e fonte. |
+| CT02-A | 0,852 | Aprova | 2/2/2/0 | Aprovada | Missão recuperada e transcrita corretamente. |
+| CT02-B | 0,813 | Aprova | 2/2/2/0 | Aprovada | Missão apresentada corretamente, com indicação da fonte. |
+| CT03-A | 0,364 | Reprova | 2/2/2/0 | Aprovada | Receita líquida correta (R$ 48,6 milhões). |
+| CT03-B | 0,000 | Reprova | 0/0/0/0 | **Reprovada** | Abstenção incorreta (falso negativo): o documento continha o dado da receita. |
+| CT04-A | 0,667 | Aprova | 2/2/2/0 | Aprovada | Prazo de 90 dias informado corretamente. |
+| CT04-B | 0,533 | Aprova | 2/2/2/0 | Aprovada | Prazo correto, com indicação da política de benefícios. |
+| CT05-A | 0,000 | Reprova | 2/2/2/0 | Aprovada | Abstenção correta: não há informação sobre o valor do bônus nos documentos disponíveis. |
+| CT05-B | 0,000 | Reprova | 2/2/2/0 | Aprovada | Abstenção correta, com a limitação declarada. |
+| CT06-A | 0,335 | Reprova | 2/2/2/0 | Aprovada | Valor correto, acompanhado de regras adicionais de crédito e desconto. |
+| CT06-B | 0,292 | Reprova | 2/2/2/0 | Aprovada | Valor correto e condições de concessão. |
 
-**Sinal** é o sinal automático (aprova se F1 ≥ 0,5). **Conc.** indica se o sinal automático e a decisão humana são iguais. A decisão final de CT01 e CT05 considera R1 e R2 (que concordaram); nas demais vale a nota de R1.
+## Concordância e métricas por versão
 
-| ID | F1 | Sinal | C/R/S/FC | Decisão final | Conc. | Justificativa |
-|---|---:|---|---|---|:---:|---|
-| CT01-A | 0,076 | Reprova | 2/2/2/0 | Aprovada | ✘ | Valor correto de R$ 50,00 por dia útil. |
-| CT01-B | 0,104 | Reprova | 2/2/2/0 | Aprovada | ✘ | Valor correto, com cartão benefício e fonte. |
-| CT02-A | 0,189 | Reprova | 2/2/2/0 | Aprovada | ✘ | Missão recuperada e transcrita corretamente. |
-| CT02-B | 0,193 | Reprova | 2/2/2/0 | Aprovada | ✘ | Missão direta, com fonte. |
-| CT03-A | 0,099 | Reprova | 2/2/2/0 | Aprovada | ✘ | Receita líquida correta (R$ 48,6 milhões). |
-| CT03-B | 0,000 | Reprova | 0/0/0/0 | **Reprovada** | ✔ | Abstenção incorreta (falso negativo): o documento tinha o dado. |
-| CT04-A | 0,071 | Reprova | 2/2/2/0 | Aprovada | ✘ | Prazo de 90 dias correto. |
-| CT04-B | 0,080 | Reprova | 2/2/2/0 | Aprovada | ✘ | Prazo correto, com citação da política. |
-| CT05-A | 0,000 | Reprova | 2/2/2/0 | Aprovada | ✘ | Abstenção correta (não há dado sobre bônus). |
-| CT05-B | 0,000 | Reprova | 2/2/2/0 | Aprovada | ✘ | Abstenção correta, com a limitação declarada. |
-| CT06-A | 0,335 | Reprova | 2/2/2/0 | Aprovada | ✘ | Valor correto, com regras adicionais de crédito e desconto. |
-| CT06-B | 0,185 | Reprova | 2/2/2/0 | Aprovada | ✘ | Valor correto e condições de concessão. |
+A comparação considera seis casos por versão. A aprovação humana ocorre quando Correção, Relevância e Suporte recebem nota 2, sem falha crítica. A aprovação automática ocorre quando F1 é igual ou superior a 0,5.
 
-## 2. Concordância e métricas por versão
-
-**Concordância auto–humano:** **1/12** (8,3%). O sinal automático reprovou as 12 saídas e a avaliação humana aprovou 11. Só o CT03-B coincide.
-
-| Medida | Versão A | Versão B |
+| Indicador | Versão A | Versão B |
 |---|---:|---:|
-| Aprovação humana (n/6) | 6/6 (100%) | 5/6 (83,3%) |
+| Média do F1 | 0,476 | 0,348 |
+| Mediana do F1 | 0,500 | 0,373 |
+| Aprovação automática | 3/6 (50,0%) | 2/6 (33,3%) |
+| Aprovação humana | 6/6 (100%) | 5/6 (83,3%) |
 | Falhas críticas | 0 | 0 |
-| F1 médio | 0,128 | 0,094 |
-| F1 mediano | 0,088 | 0,092 |
-| Aprovação pelo sinal automático (n/6) | 0/6 | 0/6 |
 
-## 3. Gráfico
+A Versão A apresentou média e mediana de F1 superiores às da Versão B. Na avaliação humana, a Versão A foi aprovada nos seis casos, enquanto a Versão B foi aprovada em cinco, com reprovação no CT03-B.
 
-![F1 lexical por caso: recalculado × registro](anexos/grafico-f1-por-caso.png)
+A concordância entre o sinal automático e a decisão humana foi de **1 em 12 casos (8,3%)**. O único caso de concordância foi CT03-B, reprovado tanto automaticamente quanto na avaliação humana. Nos outros 11 casos, o F1 indicou reprovação, embora a avaliação humana tenha aprovado as respostas.
 
-*Os losangos são os F1 do registro (usados nas tabelas), as barras são o F1 recalculado e a linha tracejada é τ = 0,5. Nenhuma das 12 saídas do registro chega ao limiar.*
+A concordância entre R1 e R2 foi de **4 em 4 casos (100%)**, conforme registrado em `05-avaliacao.md`. Os dois avaliadores atribuíram as mesmas pontuações aos quatro casos selecionados: CT01-A, CT01-B, CT05-A e CT05-B.
 
-## 4. Análise de divergências e casos-limite
+## Gráfico
 
-**CT05 (abstenção correta com F1 = 0).** R1 e R2 aprovaram as duas abstenções (A e B), e o F1 do registro é 0,000, porque a redação da abstenção não repete as palavras da referência. O sinal automático reprova um comportamento correto.
+- [Aprovação Humana](../evidencias/graficos/grafico_aprovacao_humana.png)
+- [F1 Lexical](../evidencias/graficos/grafico_f1_lexical.png)
 
-**CT06-A (resposta correta e longa).** A resposta traz o valor certo e mais regras (crédito, desconto, acúmulo). Tem o maior F1 do registro (0,335), mas continua abaixo de τ. A mesma informação aparece no CT01-A, curta e também correta, e o F1 é diferente: o F1 mede sobreposição de palavras, não se a resposta está certa.
+## Análise de divergências e casos-limite
 
-**CT03-B (concordância por coincidência).** O sinal reprova (F1 = 0) e a avaliação humana também. Mas a humana reprova por abstenção incorreta, enquanto o F1 dá 0 simplesmente porque não houve palavras em comum. O CT05, que é uma abstenção correta, também tem F1 = 0 e não é distinguido do CT03-B.
+O principal caso de divergência entre as avaliações automática e humana ocorreu nas respostas aprovadas pelos avaliadores, mas reprovadas pelo F1. Isso aconteceu porque a métrica considera a sobreposição lexical entre a resposta e a referência, não sendo capaz de reconhecer plenamente equivalência de significado ou correção factual.
 
-**Divergência entre registro e recálculo.** Com o F1 recalculado a partir das referências do plano de casos de teste, o sinal automático aprovaria CT01, CT02 e CT04 em A e B (6 saídas) e a concordância subiria para **7/12**. Mesmo assim, o sinal continuaria reprovando CT03-A, CT05 e CT06, que são respostas corretas.
+O CT05 ilustra essa limitação. As duas versões realizaram a abstenção esperada, pois os documentos disponíveis não apresentavam o valor do bônus anual por desempenho pago em 2025. Apesar disso, ambas receberam F1 igual a zero. A avaliação humana considerou as duas respostas corretas, relevantes e sustentadas pela ausência de evidência nos documentos.
 
-## 5. Diagrama do ciclo de versionamento
+Outro caso importante é o CT06. As respostas das duas versões foram consideradas corretas pelos avaliadores, mas ficaram abaixo do limiar de F1. A presença de informações adicionais sobre o benefício aumentou a diferença entre as respostas e a referência curta, sem representar necessariamente um erro factual.
+
+O CT03-B representa o principal problema funcional identificado na Versão B. Embora o relatório financeiro contenha a receita líquida de R$ 48,6 milhões, a resposta afirmou que não foi possível determinar o valor. Trata-se de um falso negativo: o sistema deixou de recuperar uma informação disponível na base documental. Por isso, o caso recebeu notas zero em Correção, Relevância e Suporte na avaliação humana.
+
+Também é importante observar que CT06 é uma paráfrase do CT01, e não uma observação totalmente independente. Os dois casos verificam essencialmente a recuperação do mesmo valor de vale-refeição, com formulações diferentes. Assim, o conjunto possui seis casos registrados, mas não seis objetivos de informação completamente distintos.
+
+Não foram registradas falhas críticas nas avaliações humanas. Entretanto, a falha média identificada em CT03-B continua relevante, pois demonstra que o prompt estruturado não impediu uma abstenção incorreta diante de evidência disponível.
+
+## Diagrama do ciclo de versionamento
 
 ```mermaid
 flowchart LR
@@ -73,39 +78,38 @@ flowchart LR
     AC -.-> O
 ```
 
-## 6. Decisão: **manter A**
+## Decisão
 
-Critério do GQM: B só avança se a aprovação humana for maior que a de A em pelo menos 1/6 e não houver falha crítica.
+Decisão: manter a Versão A como baseline
 
-- A teve **6/6** de aprovação e B teve **5/6**, então não há ganho de B.
-- Não houve falha crítica em nenhuma das versões.
-- O F1 de B não subiu (média 0,094 contra 0,128), então a decisão não é "revisar".
+Com base nos resultados desta rodada, a decisão é **manter a Versão A como baseline e não promover a Versão B para uso como configuração preferencial neste momento**.
 
-A única saída reprovada é o CT03-B, que foi uma abstenção incorreta, sem valor inventado.
+A decisão é sustentada pelos seguintes resultados:
 
-## 7. Respostas às questões de análise
+- A Versão A obteve aprovação humana em 6 dos 6 casos (100%), enquanto a Versão B obteve aprovação em 5 dos 6 casos (83,3%).
+- A Versão A apresentou média de F1 de 0,476, superior à média de 0,348 da Versão B.
+- A Versão B apresentou uma falha de recuperação no CT03, abstendo-se incorretamente de informar a receita líquida de 2025, apesar de o dado estar disponível no documento.
+- Não foram identificadas falhas críticas, mas a falha funcional no CT03-B impede considerar a Versão B superior ou pronta para substituir o baseline.
 
-> **Pendente:** o texto das quatro questões do enunciado não estava nos materiais que recebi. Abaixo estão as respostas às duas perguntas do Plano GQM. Para completar a seção, cole as quatro questões do enunciado.
+A Versão B poderá ser revisada em uma próxima rodada, com atenção especial à recuperação de informações que estão presentes nos documentos. Após o ajuste, será necessário executar novamente os casos de teste e realizar nova avaliação, mantendo as condições de comparação controladas.
+
+O critério para uma futura promoção da Versão B deverá incluir aprovação humana nos seis casos, ausência de falhas críticas e ausência de falhas funcionais como a observada no CT03-B. O F1 deverá ser considerado em conjunto com a avaliação humana, e não como critério isolado de qualidade.
+
+## Respostas às questões de análise
 
 **Q1. A versão B atende melhor à tarefa do que a versão A?**
-Não. A aprovação humana foi 6/6 em A e 5/6 em B, e a diferença é um único caso (CT03-B). B não mostrou ganho nesta rodada.
+
+Não. A aprovação humana foi de 6/6 na Versão A e 5/6 na Versão B. A diferença corresponde à falha do CT03-B, em que a Versão B não recuperou uma informação existente no relatório financeiro. Além disso, a Versão A apresentou média de F1 superior. Portanto, nesta rodada, a Versão B não demonstrou ganho de qualidade.
 
 **Q2. O sinal automático representa a adequação das respostas?**
-Não. A concordância foi de 1/12 com o F1 do registro (7/12 com o recálculo). O sinal reprova respostas corretas, por redação diferente (abstenção no CT05) ou por resposta longa (CT06-A).
 
-## 8. Limitações
+Não de forma suficiente. A concordância entre o sinal automático e a avaliação humana foi de apenas 1/12 (8,3%). O F1 reprovou respostas que os avaliadores consideraram corretas, como as abstenções do CT05 e as respostas dos demais casos com redação diferente da referência. Isso demonstra que a métrica lexical deve ser utilizada como indicador complementar, não como substituta da avaliação humana.
 
-- **Seis casos não demonstram risco zero.** O resultado de 6/6 em A não prova que o sistema seja seguro. Cada caso vale cerca de 16,7 pontos percentuais e houve uma única execução por caso e versão.
-- **CT06 não é independente.** É uma paráfrase do CT01, então há menos de seis situações distintas.
-- **Pouca revisão dupla.** R2 avaliou só 4 das 12 saídas. As outras 8 dependem de um único avaliador (R1), e a concordância R1–R2 de 100% vale só para essas 4.
-- **Quase todas as notas foram 2/2/2.** A avaliação humana quase não separou as saídas, e não há comparação com acaso (sem kappa).
-- **F1 lexical.** Mede palavras em comum, não significado. As referências são curtas e as respostas do RAG tendem a ser mais longas.
-- **Valores de F1 em aberto.** Registro e recálculo divergem (nota na introdução).
-- **Documentos sintéticos.** O resultado vale para este conjunto de documentos e perguntas.
+## Limitações
 
-## 9. Acompanhamento
-
-1. Conferir quais arquivos de referência o script de F1 usou e fixar um único valor oficial de F1.
-2. Reexecutar o CT03-B algumas vezes para ver se a abstenção incorreta se repete.
-3. Ampliar os casos, principalmente de abstenção e de paráfrase, antes de decidir sobre B.
-4. Completar a seção 7 com as quatro questões do enunciado.
+- O experimento contém apenas seis casos de teste, sendo CT06 uma paráfrase de CT01. Portanto, a variedade de perguntas e de informações avaliadas é limitada.
+- O conjunto de documentos é pequeno e restrito a materiais organizacionais específicos. Os resultados não garantem o mesmo comportamento em outras bases documentais.
+- O F1 lexical mede sobreposição de palavras e não avalia diretamente equivalência semântica, correção factual, relevância ou qualidade da recuperação de fontes.
+- A avaliação humana utiliza uma escala de 0 a 2 e foi realizada por dois avaliadores, mas R2 analisou somente quatro das doze saídas. A concordância de 100% se aplica apenas a esses quatro casos.
+- O resultado do experimento representa as execuções realizadas nas condições registradas. Alterações no modelo, na versão do sistema, nos parâmetros ou nos documentos podem modificar as respostas.
+- A decisão é válida para esta rodada e para os casos avaliados. Uma conclusão mais ampla exigiria maior quantidade e diversidade de perguntas, novas execuções e avaliação humana adicional.
