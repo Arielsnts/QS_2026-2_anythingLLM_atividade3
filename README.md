@@ -13,7 +13,7 @@ A análise responde à pergunta norteadora: uma mudança simples melhora a quali
 
 ## Vídeo da Atividade
 
-**URL:** [Link do vídeo publicado](video/video.md) <br />
+- [Clique Aqui para acessar o vídeo](video/video.md)
 
 ---
 
@@ -29,26 +29,42 @@ A análise responde à pergunta norteadora: uma mudança simples melhora a quali
 ### Passos
 
 1. **Clone este repositório**
+
 ```bash
-   git clone https://github.com/Arielsnts/QS_2026-2_anythingLLM_atividade3
-   cd QS_2026-2_AnythingLLM_atividade3/
+git clone https://github.com/Arielsnts/QS_2026-2_anythingLLM_atividade3
+cd QS_2026-2_anythingLLM_atividade3
 ```
 
 2. **Consulte a documentação técnica**
-   - Leia os arquivos da `docs/` na ordem: `01` a `06`
-   - Revise o plano GQM e o critério τ antes dos resultados (`01-gqm.md`)
-   - Consulte as saídas brutas em `04-saidas.md` e `evidencias/`
+
+- Leia os arquivos da `docs/` na ordem: `01` a `06`.
+- Revise o plano GQM e o critério τ antes dos resultados (`01-gqm.md`).
+- Consulte as saídas brutas em `04-saidas.md` e `evidencias/`.
 
 3. **Replique o experimento**
-   - Use o manifesto de cada versão em `03-versoes.md` (A e B)
-   - Execute os seis casos de `02-casos.md` uma vez em cada versão (12 saídas)
-   - Calcule o F1 lexical com a normalização definida em `01-gqm.md`
-   - Registre as avaliações humanas e compare com as nossas em `05-avaliacao.md`
+
+- Use o manifesto de cada versão em `03-versoes.md` (A e B).
+- Execute os seis casos de `02-casos.md` uma vez em cada versão (12 saídas).
+- Para calcular o F1 lexical, entre na pasta do script:
+
+```bash
+cd evidencias/f1-lexical
+```
+
+- Execute o comando abaixo para cada caso, informando primeiro o arquivo da saída e depois o arquivo da referência:
+
+```bash
+python3 f1.py saidas/ct-01A.txt referencias/ct-01.txt
+```
+
+- Repita o comando para os demais casos e versões, alterando os nomes dos arquivos.
+- Registre as avaliações humanas e compare com as nossas em `05-avaliacao.md`.
 
 4. **Valide a decisão**
-   - Revise a tabela consolidada, o gráfico e a análise de divergência em `06-analise-decisao.md`
-   - Verifique se a decisão segue o critério definido antes da execução
-   - Compare com o seu contexto de uso
+
+- Revise a tabela consolidada, os gráficos e a análise de divergência em `06-analise-decisao.md`.
+- Verifique se a decisão segue o critério definido antes da execução.
+- Compare com o seu contexto de uso.
 
 ---
 
@@ -67,7 +83,7 @@ Navegue pelas seções principais:
 
 ## Evidências
 
-- Saídas brutas e anexos: [clique aqui](evidencias/)
+- Saídas brutas, contextos e scripts: [clique aqui](evidencias/)
 
 ---
 
@@ -79,7 +95,7 @@ Navegue pelas seções principais:
 
 ## Referências
 
-- **[Referências de partida](info/referencias.md)**
+- **[Referências](info/referencias.md)**
 
 ---
 

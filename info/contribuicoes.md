@@ -1,11 +1,11 @@
 | Nome | Contribuição |
 | :--- | :--- |
-| ARIEL SANTOS SOUZA | Casos de Teste |
-| EMANUEL CHAGAS MELO RIBEIRO | Lab de Contexto e Prompts |
-| FERNANDA SILVA FARIAS * | Verificação das Fontes |
-| JOÃO LUCAS MACHADO DA SILVA | Casos de Teste |
-| KAROL STHEFANNY DA CRUZ MENEZES | Casos de Teste |
-| MARIANE MARTINS SANTOS | Modelo de Ameaças |
-| NYCOLLY SOUZA SENA | Lab de Contexto e Prompts |
+| ARIEL SANTOS SOUZA | Saídas |
+| EMANUEL CHAGAS MELO RIBEIRO | Avaliação |
+| FERNANDA SILVA FARIAS | Casos |
+| JOÃO LUCAS MACHADO DA SILVA | Avaliação |
+| KAROL STHEFANNY DA CRUZ MENEZES* | Análise |
+| MARIANE MARTINS SANTOS | GQM |
+| NYCOLLY SOUZA SENA | Decisão |
 
-*Por razões médicas, não apresentará sua parte presencialmente.
+*Observação: A discente participou de todas as etapas de desenvolvimento e análise do relatório, ausentando-se apenas da apresentação devido a compromisso acadêmico prévio de ministração de oficina no mesmo horário. Justificado via e-mail.
